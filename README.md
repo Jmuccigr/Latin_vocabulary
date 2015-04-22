@@ -3,6 +3,7 @@ This is a plain-text dump of the data from my FileMaker Pro relational database 
 
 ## The Conversion
 Getting the data out of FMP and into this flat format required a few steps. First was updating the files. I already had FMP3 versions along with the FMP6 version I had done most of the work in. (Thatʻs .fp3 and .fp5 for the file extensions.) Sadly FMP12, which is what Iʻm now using, doesnʻt directly read the .fp5 format at all, and FMP6 is a Classic app, which OS X 9 (Mavericks) canʻt run directly. So hereʻs what I did:
+
   1. Create a virtual OS X 10.6 (Snow Leopard) box on my Mavericks system. Snow Leopard was the last OS X version to be able to run the Apple Classic emulator, Rosetta. That took a little doing, since I updated the various sytem pieces as needed. Not that this version can be super secure, but I just wanted it as close as possible.
   1. Convert the old .fp5 files to .fp7 with FMP 8 (I keep a few versions of FMP around).
   1. Archive the old .fp5 files as a zip file.
