@@ -18,6 +18,20 @@ Getting the data out of FMP and into this flat format required a few steps. Firs
 ## File Details
 The various files have different data fields, of course, but all of them include an arbitrary ID field which was used as the key in the relational database. Below I'll comment only on fields which would seem to need it.
 
-### Stems.tab - a file of Latin stems
+### Stems.tab - Latin stems
   * Type - nearly all of these are stem (basically the root vs. prefix or suffix of a word) morphemes. I intended to add more of the others, but didn't get around to it.
   * Count - a count of all the times the stem was attached to a vocabulary item in my database. Again, I never systematically finished attaching all the stems to all the items, but I think I did a fairly good job, so that the higher this number, the more common the stem is. If anyone forks this file, they can ignore this field.
+
+### Vocab.tab - the vocabulary items
+This is fairly self-explanatory. The columns in which 1 appears as an entry (except for the ID) use Booleans and I didn't include 0, where applicable (which is most of the time). I think I was pretty good about identifying morphological groups (*e.g.*, abstract nouns in -tas), but not so good about sense groups (*e.g.*, family terms).
+
+### Readings.tab - the "readings"
+This file contains all the sources I used for the vocabulary, which I called readings, even if they were simply chapters from textbooks or excerpts from longer readings. This is another place where the relational database came in handy, as I could link vocab items to readings, but here in the flat file I included a list of all the vocab items for each reading.
+
+  * Name - the identity of the reading, often a textbook chapter.
+  * Author - the author of the work I took the readings from, not necessarily an ancient author.
+  * Title - again, the title of the work I got the vocab lists from.
+  * Citation - a very abbreviated version.
+  * VocabCount - the number of vocab items **I** counted, which is not necessarily the same number of items in the original. For example, the original might have broken down the first-person proun into separate entries for separate cases, but I didn't.
+  * VocabID - this is the same ID that appears in the Vocab.tab file, so you could recreate the relationships, if you wanted.
+  * VocabItem - my own form of the Latin part of the vocab item. This should be enough to dis-ambiguate the item.
