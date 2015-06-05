@@ -2,15 +2,15 @@
 This is a plain-text dump of the data from my FileMaker Pro relational database of Latin vocabulary and stems. I created it in the early 2000s, starting on FMP 3 and moving up to FMP 6. I used it a lot when I was teaching elementary Latin, and the formal product of it was an article: [Frequent Vocabulary in Latin Instruction, *Classical World* 97(4), 409–433](http://www.jstor.org/stable/4352875).
 
 ## The Conversion
-Getting the data out of FMP and into this flat format required a few steps. First was updating the files. I already had FMP3 versions along with the FMP6 version I had done most of the work in. (Thatʻs .fp3 and .fp5 for the file extensions.) Sadly FMP12, which is what Iʻm now using, doesnʻt directly read the .fp5 format at all, and FMP6 is a Classic app, which OS X 9 (Mavericks) canʻt run directly. So hereʻs what I did:
+Getting the data out of FMP and into this flat format required a few steps. First was updating the files. I already had FMP3 versions along with the FMP6 versions that I had done most of the work in. (That's .fp3 and .fp5 for the file extensions.) Sadly FMP12, which is what I'm now using, doesn't directly read the .fp5 format at all, and FMP6 is a Classic app, which OS X 9 (Mavericks) can't run directly. So hereʻs what I did:
 
-  1. Create a virtual OS X 10.6 (Snow Leopard) box on my Mavericks system. Snow Leopard was the last OS X version to be able to run the Apple Classic emulator, Rosetta. That took a little doing, since I updated the various sytem pieces as needed. Not that this version can be super secure, but I just wanted it as close as possible.
+  1. Create a virtual OS X 10.6 (Snow Leopard) box on my Mavericks system. Snow Leopard was the last OS X version to be able to run the Apple Classic emulator, Rosetta. That took a little doing, since I updated the various sytem pieces as needed. Not that this version of OS X can be super secure, but I just wanted it as close as possible.
   1. Convert the old .fp5 files to .fp7 with FMP 8 (I keep a few versions of FMP around).
   1. Archive the old .fp5 files as a zip file.
   1. Switch back to Mavericks.
-  1. Archive the old .fp7 files. I realized that the conversion process forced me to rename the originals, and zipping left them there, so I cold skip the step of restoring the old filenames.
+  1. Archive the old .fp7 files. I realized that the conversion process forced me to rename the originals, and zipping left them there, so I could skip the step of restoring the old filenames.
   1. Convert the .fp7 to .fmp12.
-  1. Export the FMP files as text. Iʻm using UTF-16 for this, because the database uses diarheses for long vowels (äëïöü). Since this is gong from relational to flat files, I had to decide which data to include in the exports.
+  1. Export the FMP files as text. Iʻm using UTF-16 for this, because the database uses diarheses for long vowels (äëïöü). Since this is going from relational to flat files, I had to decide which data to include in the exports.
   1. Convert the diarheses to macrons (āēīōū). I did this using BBEdit.
   1. Import the new stems with macrons back into FMP. I did it this way because search and replace on BBEdit is faster than in FMP.
   1. Put the text files here.
@@ -32,6 +32,6 @@ This file contains all the sources I used for the vocabulary, which I called rea
   * Author - the author of the work I took the readings from, not necessarily an ancient author.
   * Title - again, the title of the work I got the vocab lists from.
   * Citation - a very abbreviated version.
-  * VocabCount - the number of vocab items **I** counted, which is not necessarily the same number of items in the original. For example, the original might have broken down the first-person proun into separate entries for separate cases, but I didn't.
+  * VocabCount - the number of vocab items **I** counted, which is not necessarily the same number of items in the original. For example, the original might have broken down the first-person pronoun into separate entries for separate cases, but I didn't.
   * VocabID - this is the same ID that appears in the Vocab.tab file, so you could recreate the relationships, if you wanted.
   * VocabItem - my own form of the Latin part of the vocab item. This should be enough to dis-ambiguate the item.
